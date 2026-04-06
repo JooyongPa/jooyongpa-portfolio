@@ -8,10 +8,41 @@ function App() {
   const works = [
     {
       title: "Bus Arrival App",
-      desc: "실시간 버스 도착 정보를 확인할 수 있는 웹 앱입니다. 정류장 검색, 즐겨찾기, 도착 정보 확인 기능을 구현했습니다.",
+      desc: "실시간 버스 도착 정보를 확인할 수 있는 웹 앱입니다. 정류장 검색, 즐겨찾기 저장, 실시간 도착 정보 확인 기능을 구현했습니다.",
+      features: [
+        "정류장 검색",
+        "즐겨찾기 저장",
+        "실시간 도착 정보 확인"
+      ],
+      tech: "React · Vite · Public API",
       accent: "text-green-400",
       link: "https://my-bus-app-psi.vercel.app/"
-    }
+    },
+  
+  {
+    title: "Music · Spotify Projects",
+    desc: "AI 기반으로 제작한 음악을 DistroKid를 통해 발매하고 있으며, Spotify에서 감상하실 수 있습니다. 발라드, 블루스, K-pop 기반으로 작업을 진행하고 있습니다.",
+    features: [
+      "AI 음악 제작 (Suno)",
+      "Spotify 정식 발매",
+      "Healing Mind Studio / Bluesy Records"
+    ],
+    tech: "Suno · Spotify",
+    accent: "text-blue-400",
+    link: "https://open.spotify.com/artist/3aClvwp9IWq4MKZlbI0p82" 
+  },
+  {
+    title: "Video · AI Visual Projects",
+    desc: "AI 기반 영상 생성 및 Shorts 콘텐츠 제작 프로젝트입니다. Threads를 통해 영상 콘텐츠를 운영하고 있습니다.",
+    features: [
+      "AI 영상 생성 (Sora / Kling)",
+      "Shorts 콘텐츠 제작",
+      "Threads 기반 영상 운영"
+    ],
+    tech: "Sora · Kling · CapCut",
+    accent: "text-purple-400",
+    link: "https://www.threads.com/@healingmindstudio"
+  }
   ]
   const musicTracks = [
     {
@@ -141,25 +172,24 @@ function App() {
     </h2>
 
     <div className="space-y-8 text-white/75 leading-8 max-w-3xl mx-auto">
-    <p>
-      JooyongPa is an AI creator focused on music, visuals, and digital experimentation.
-      <br />
-      음악, 비주얼, 디지털 실험을 중심으로 작업하는 AI 크리에이터입니다.
-    </p>
+  <p>
+  AI 기반 창작을 중심으로 음악, 영상, 실험적 프로젝트를 진행하고 있습니다.
+    <br />
+    Suno, Grok을 중심으로 AI 도구를 활용하여 기획부터 제작, 정리와 운영까지 직접 이어가고 있습니다.
+  </p>
 
-    <p>
-      Through projects such as Healing Mind Studio and Bluesy Records, <br />
-      he develops music-based content, <br />
-      visual experiments, and channel-driven creative systems. <br />
-      Healing Mind Studio와 Bluesy Records를 통해 음악 기반 콘텐츠, 비주얼 실험, <br />
-      창작 중심의 채널 운영 시스템을 구축하고 있습니다.
-</p>
+  <p>
+    음악은 DistroKid를 통해 발매하고 있으며
+    <br />
+    Spotify에서 감상하실 수 있습니다.
+  </p>
 
-    <p>
-      This portfolio highlights selected works, creative direction, and ongoing experiments built with AI tools. <br />
-      이 포트폴리오는 대표 작업, 창작 방향, 그리고 AI 도구 기반 실험 흐름을 정리한 공간입니다.
-    </p>
-    </div>
+  <p>
+    단순한 결과물이 아닌
+    <br />
+    지속 가능한 창작 구조와 브랜드를 만들어가는 과정에 집중하고 있습니다.
+  </p>
+</div>
     <div className="mt-12">
   <p className="text-xs uppercase tracking-[0.25em] text-[#e6b84f] mb-4">
     Tools
@@ -169,13 +199,13 @@ function App() {
     <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/80 hover:bg-white/10 transition">ChatGPT</span>
     <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/80 hover:bg-white/10 transition">Claude</span>
     <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/80 hover:bg-white/10 transition">Gemini</span>
-    <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/80 hover:bg-white/10 transition">Grok</span>
     <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/80 hover:bg-white/10 transition">Midjourney</span>
-    <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/80 hover:bg-white/10 transition">Suno</span>
+    <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/80 hover:bg-white/10 transition">Grok</span>
     <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/80 hover:bg-white/10 transition">Kling</span>
+    <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/80 hover:bg-white/10 transition">Suno</span>
     <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/80 hover:bg-white/10 transition">NotebookLM</span>
     <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/80 hover:bg-white/10 transition">CapCut</span>
-    <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-white/80 hover:bg-white/10 transition">AI Tools</span>
+    
   </div>
 </div>
     <div className="mt-16 h-px w-full bg-gradient-to-r from-transparent via-blue-400/10 to-transparent" />
@@ -198,18 +228,15 @@ function App() {
                   보여줍니다.
                 </p>
 
-                <div className="grid md:grid-cols-2 gap-6 items-stretch">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
                   {works.map((work) => (
                    <div
                    key={work.title}
-                   className="group rounded-2xl border border-white/10 bg-white/[0.03] p-7 min-h-[240px]
-h-full flex flex-col justify-between
-transition-all duration-300 hover:translate-y-[-2px]
-hover:bg-white/[0.06] hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,255,255,0.08)]"
+                   className="group rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-10 min-h-[240px]
+                    h-full flex flex-col justify-between  transition-all duration-300 hover:translate-y-[-2px]
+                    hover:bg-white/[0.06] hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,255,255,0.08)]"
                  >
-                      
-
-                      <div className="flex flex-col h-full justify-between">
+  <div className="flex flex-col h-full justify-between">
   <div>
     <h3 className="text-2xl font-semibold mb-4 group-hover:text-white transition">
       {work.title}
@@ -217,7 +244,23 @@ hover:bg-white/[0.06] hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,255,255
 
     <p className="text-white/60 leading-7">
       {work.desc}
-    </p>
+      </p>
+      {work.features && (
+  <ul className="mt-4 space-y-3 text-sm text-white/70">
+    {work.features.map((feature) => (
+      <li key={feature} className="flex items-center gap-2">
+        <span className="text-green-400">✔</span>
+        <span>{feature}</span>
+      </li>
+    ))}
+  </ul>
+)}
+
+{work.tech && (
+  <p className="mt-5 text-xs uppercase tracking-[0.18em] text-white/70 font-medium">
+    {work.tech}
+  </p>
+)}
   </div>
 
   <a
@@ -226,7 +269,7 @@ hover:bg-white/[0.06] hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,255,255
     rel="noreferrer"
     className={`mt-6 text-sm font-medium ${work.accent} group-hover:translate-x-1 group-hover:brightness-125 transition`}
   >
-    Open App →
+    View Live →
   </a>
 </div>
                     </div>
@@ -252,7 +295,7 @@ hover:bg-white/[0.06] hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,255,255
     </p>
   </div>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
     {/* 1 */}
     <div className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
