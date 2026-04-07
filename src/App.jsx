@@ -280,177 +280,329 @@ function App() {
               </div>
             </section>
             <section id="music" className="px-6 md:px-12 py-20">
-            <div className="max-w-6xl mx-auto">
-  <div className="mb-12">
-    <p className="text-sm uppercase tracking-[0.2em] text-[#e6b84f] mb-3">
-      Music
-    </p>
-    <h2 className="text-3xl md:text-5xl font-semibold text-white mb-4">
-      Music Projects
-    </h2>
-    <p className="text-white/60 max-w-2xl leading-relaxed">
-      채널과 프로젝트 성격에 따라 음악 작업을 분리해 운영하고 있습니다.
-      힐링·집중용 플레이리스트부터 블루스 기반 사운드, 실험적 프로젝트,
-      그리고 실제 발표곡까지 한눈에 볼 수 있도록 구성했습니다.
-    </p>
+  <div className="max-w-6xl mx-auto">
+    <div className="mb-12">
+      <p className="text-sm uppercase tracking-[0.2em] text-[#e6b84f] mb-3">
+        Music
+      </p>
+      <h2 className="text-3xl md:text-5xl font-semibold text-white mb-4">
+        Music Ecosystem
+      </h2>
+      <p className="text-white/60 max-w-2xl leading-relaxed">
+        아티스트 기반 음악 작업과 YouTube 채널 운영 구조를 함께 구성한 포트폴리오입니다.
+        음악 제작, 브랜딩, 콘텐츠 운영, 유통까지 연결된 전체 흐름을 보여줍니다.
+      </p>
+    </div>
+
+    {/* ===== Artists / Releases ===== */}
+    <div className="mt-12">
+      <h3 className="text-lg text-[#e6b84f] mb-6">Artists / Releases</h3>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* JooyongPa */}
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+          <h3 className="text-xl font-semibold text-white mb-3">JooyongPa</h3>
+
+          <p className="text-white/60 text-sm mb-4">
+            Released artist project with AI-based music production and distribution
+          </p>
+
+          <div className="flex gap-3 mb-4">
+            <a
+              href="https://www.youtube.com/@jooyongpa"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs px-3 py-1 border border-white/20 rounded-full hover:bg-white/10"
+            >
+              YouTube
+            </a>
+
+            <a
+              href="https://open.spotify.com/artist/3aClvwp9IWq4MKZlbI0p82"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs px-3 py-1 border border-white/20 rounded-full hover:bg-white/10"
+            >
+              Spotify
+            </a>
+          </div>
+
+          <ul className="text-sm text-white/70 space-y-1">
+            <li>• 그뿐이야 (That’s All)</li>
+            <li>• Clap It Loud</li>
+            <li>• Bar Philosophy</li>
+          </ul>
+        </div>
+
+        {/* Soriionn */}
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
+          <h3 className="text-xl font-semibold text-white mb-3">Soriionn</h3>
+
+          <p className="text-white/60 text-sm mb-4">
+            Emotional K-pop based artist project
+          </p>
+
+          <div className="flex gap-3 mb-4">
+            <a
+              href="https://www.youtube.com/@sorionn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs px-3 py-1 border border-white/20 rounded-full hover:bg-white/10"
+            >
+              YouTube
+            </a>
+
+            <a
+              href="https://open.spotify.com/artist/4FjyBA9KPo5Xr5N5vYl3zD"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs px-3 py-1 border border-white/20 rounded-full hover:bg-white/10"
+            >
+              Spotify
+            </a>
+          </div>
+
+          <ul className="text-sm text-white/70 space-y-1">
+            <li>• 분홍빛 꽃비</li>
+            <li>• Pack Your Bag</li>
+            <li>• Not a Goodbye</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {/* ===== YouTube Channels ===== */}
+    <div className="mt-16">
+      <h3 className="text-lg text-[#e6b84f] mb-6">YouTube Channels</h3>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a
+          href="https://www.youtube.com/@JooyongPa_S"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition block"
+        >
+          <h3 className="text-white font-semibold">Healing Mind Studio</h3>
+          <p className="text-white/60 text-sm mt-2">
+            Focus / healing playlist-based music channel
+          </p>
+        </a>
+
+        <a
+          href="https://www.youtube.com/@JooyongPa_R"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition block"
+        >
+          <h3 className="text-white font-semibold">Bluesy Records</h3>
+          <p className="text-white/60 text-sm mt-2">
+            Vintage blues and old-school hip-hop channel
+          </p>
+        </a>
+
+        <a
+          href="https://www.youtube.com/@sorionn"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition block"
+        >
+          <h3 className="text-white font-semibold">Soriionn Channel</h3>
+          <p className="text-white/60 text-sm mt-2">
+            Experimental and emotional sound project channel
+          </p>
+        </a>
+      </div>
+    </div>
+
+    {/* ===== Featured Playlist ===== */}
+    <div className="mt-16">
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-6 flex items-center justify-between gap-4">
+        <div>
+          <h3 className="text-white font-semibold">Featured Playlist</h3>
+          <p className="text-white/60 text-sm mt-2">
+            Curated listening flow connecting projects and releases
+          </p>
+        </div>
+
+        <a
+          href="https://open.spotify.com/playlist/2JPO9D2g2003G4UUpIb3ye"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs px-4 py-2 border border-white/20 rounded-full hover:bg-white/10"
+        >
+          Open ↗
+        </a>
+      </div>
+    </div>
   </div>
-
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-    {/* 1 */}
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
-      <p className="text-xs text-[#e6b84f] mb-2">01</p>
-      <h3 className="text-xl font-semibold text-white mb-2">
-        Healing Mind Studio
-      </h3>
-      <p className="text-white/60 text-sm">
-        집중·휴식·드라이브용 플레이리스트 중심 힐링 음악 프로젝트
-      </p>
-    </div>
-
-    {/* 2 */}
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
-      <p className="text-xs text-[#e6b84f] mb-2">02</p>
-      <h3 className="text-xl font-semibold text-white mb-2">
-        Bluesy Records
-      </h3>
-      <p className="text-white/60 text-sm">
-        빈티지 블루스와 올드스쿨 힙합 감성 기반 사운드 프로젝트
-      </p>
-    </div>
-
-    {/* 3 */}
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
-      <p className="text-xs text-[#e6b84f] mb-2">03</p>
-      <h3 className="text-xl font-semibold text-white mb-2">
-        Sorion
-      </h3>
-      <p className="text-white/60 text-sm">
-        실험적 음악과 사운드를 위한 독립 프로젝트 공간
-      </p>
-    </div>
-
-    {/* 4 */}
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
-      <p className="text-xs text-[#e6b84f] mb-2">04</p>
-      <h3 className="text-xl font-semibold text-white mb-2">
-        Released Tracks
-      </h3>
-      <p className="text-white/60 text-sm">
-        Spotify 등 플랫폼에 정식 발매된 곡 모음
-      </p>
-    </div>
-
-  </div>
-</div>
 </section>
+
 <section id="visuals" className="px-6 md:px-12 py-20">
   <div className="max-w-5xl mx-auto">
     <h2 className="text-4xl md:text-5xl font-semibold mb-6">
       Visuals
     </h2>
+    <div className="mt-12 space-y-12">
+    <div>
+  <h3 className="text-lg text-[#e6b84f] mb-4">Cinematic</h3>
 
-    <p className="text-white/60 mb-12 max-w-2xl">
-      AI 이미지 생성, 캐릭터 디자인, 시네마틱 비주얼 실험 작업을 정리한 영역입니다.
-      앞으로 대표 이미지와 비주얼 프로젝트를 이 섹션에 추가할 예정입니다.
-    </p>
-
-    <div className="grid md:grid-cols-2 gap-6">
-    <div className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden hover:scale-[1.02] transition-all duration-300">
-    <img
-  src="https://picsum.photos/400/300"
-  onClick={() => setSelectedImage("https://picsum.photos/800/600")}
-  className="h-[180px] w-full object-cover cursor-pointer"
-/>
-  <div className="p-6">
-    <div className="text-blue-400 text-sm mb-2">
-      Visual Experiments
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="relative group overflow-hidden rounded-xl">
+      <img
+        src="/images/cinematic1.jpg"
+        alt="Cinematic visual 1"
+        className="w-full h-[220px] object-cover transition duration-300 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300"></div>
     </div>
 
-    <h3 className="text-xl font-semibold mb-3">
-      Cinematic Image Studies
-    </h3>
-
-    <p className="text-white/60 text-sm leading-6">
-      AI 이미지 생성, 콘셉트 비주얼, 시네마틱 연출을 실험하는 작업입니다.
-    </p>
-  </div>
-</div>
-
-<div className="rounded-2xl border border-white/10 bg-white/[0.03] overflow-hidden hover:scale-[1.02] transition-all duration-300">
-<img
-  src="https://picsum.photos/401/300"
-  onClick={() => setSelectedImage("https://picsum.photos/801/600")}
-  className="h-[180px] w-full object-cover cursor-pointer"
-/>
-  <div className="p-6">
-    <div className="text-yellow-400 text-sm mb-2">
-      Character & Concept
+    <div className="relative group overflow-hidden rounded-xl">
+      <img
+        src="/images/cinematic2.jpg"
+        alt="Cinematic visual 2"
+        className="w-full h-[220px] object-cover transition duration-300 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300"></div>
     </div>
 
-    <h3 className="text-xl font-semibold mb-3">
-      Character-based Visual Work
-    </h3>
+    <div className="relative group overflow-hidden rounded-xl">
+      <img
+        src="/images/cinematic3.jpg"
+        alt="Cinematic visual 3"
+        className="w-full h-[220px] object-cover transition duration-300 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300"></div>
+    </div>
+  </div>
+  <div>
+  <h3 className="text-lg text-[#e6b84f] mb-4">Character</h3>
 
-    <p className="text-white/60 text-sm leading-6">
-      캐릭터 중심 이미지, 브랜딩 콘셉트, 스타일 기반 시각 작업을 진행합니다.
-    </p>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[860px]">
+    <div className="relative group overflow-hidden rounded-xl">
+      <img
+        src="/images/character1.jpg"
+        alt="Character visual 1"
+        className="w-full h-[240px] object-cover transition duration-300 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition duration-300"></div>
+    </div>
+
+    <div className="relative group overflow-hidden rounded-xl">
+      <img
+        src="/images/character2.jpg"
+        alt="Character visual 2"
+        className="w-full h-[240px] object-cover transition duration-300 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition duration-300"></div>
+    </div>
   </div>
 </div>
+<div>
+  <h3 className="text-lg text-[#e6b84f] mb-4">Album Art</h3>
+
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div className="overflow-hidden rounded-xl">
+      <img
+        src="/images/album1.jpg"
+        alt="Album art 1"
+        className="w-full aspect-square object-cover transition duration-300 hover:scale-105"
+      />
+    </div>
+
+    <div className="overflow-hidden rounded-xl">
+      <img
+        src="/images/album2.jpg"
+        alt="Album art 2"
+        className="w-full aspect-square object-cover transition duration-300 hover:scale-105"
+      />
+    </div>
+
+    <div className="overflow-hidden rounded-xl">
+      <img
+        src="/images/album3.jpg"
+        alt="Album art 3"
+        className="w-full aspect-square object-cover transition duration-300 hover:scale-105"
+      />
+    </div>
+
+    <div className="overflow-hidden rounded-xl">
+      <img
+        src="/images/album4.jpg"
+        alt="Album art 4"
+        className="w-full aspect-square object-cover transition duration-300 hover:scale-105"
+      />
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+    
+
+    </div>
+ 
+</section>
+<section id="contact" className="px-6 md:px-12 py-20">
+  <div className="max-w-5xl mx-auto">
+
+    <div className="mb-12">
+      <p className="text-sm uppercase tracking-[0.2em] text-[#e6b84f] mb-3">
+        Contact
+      </p>
+
+      <h2 className="text-3xl md:text-5xl font-semibold text-white mb-4">
+        Get in Touch
+      </h2>
+
+      <p className="text-white/60 max-w-xl leading-relaxed">
+        AI 기반 콘텐츠 제작, 음악, 비주얼 작업 협업 및 문의는 아래 채널을 통해 연락 주세요.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      {/* Email */}
+      <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=jimmy710101@gmail.com&su=Portfolio%20Inquiry"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition block"
+>
+  <h3 className="text-white font-semibold">Email</h3>
+  <p className="text-white/60 text-sm mt-2">
+    jimmy710101@gmail.com
+  </p>
+</a>
+
+      {/* Blog */}
+      <a
+        href="https://blog.naver.com/act2lab"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition block"
+      >
+        <h3 className="text-white font-semibold">Naver Blog</h3>
+        <p className="text-white/60 text-sm mt-2">
+          AI 콘텐츠와 실험 기록
+        </p>
+      </a>
+
+      {/* Threads */}
+      <a
+        href="https://www.threads.com/@healingmindstudio"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition block"
+      >
+        <h3 className="text-white font-semibold">Threads</h3>
+        <p className="text-white/60 text-sm mt-2">
+          최신 작업 및 업데이트
+        </p>
+      </a>
+
     </div>
   </div>
 </section>
-            <section id="contact" className="px-6 md:px-12 py-24 flex justify-center">
-              <div className="max-w-3xl text-center">
-                <h2 className="text-4xl md:text-5xl font-semibold mb-8">
-                  Contact
-                </h2>
-
-                <p className="text-white/60 leading-8 mb-10">
-                  협업, 포트폴리오 문의, 창작 프로젝트 연결용 영역입니다.
-                  아래 링크를 통해 작업물과 채널을 확인하실 수 있습니다.
-                </p>
-
-                <div className="flex flex-col gap-4 text-white/80">
-                <a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=jimmy710101@gmail.com"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="rounded-xl border border-white/10 bg-white/[0.03] px-6 py-4 hover:bg-white/[0.06] hover:scale-[1.02] hover:shadow-lg transition-all duration-300 text-center"
->
-  📧 Email · jimmy710101@gmail.com
-</a>
-
-                  <a
-                    href="https://www.youtube.com/@jooyongpa"
-                  
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-xl border border-white/10 bg-white/[0.03] px-6 py-4 hover:bg-white/[0.06] hover:scale-[1.02] hover:shadow-lg transition-all duration-300 text-center"
-                  >
-                    YouTube · JooyongPa
-                  </a>
-
-                  <a
-                    href="https://blog.naver.com/act2lab"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-xl border border-white/10 bg-white/[0.03] px-6 py-4 hover:bg-white/[0.06] hover:scale-[1.02] hover:shadow-lg transition-all duration-300 text-center"
-                  >
-                    Naver Blog · act2lab
-                  </a>
-
-                  <a
-                    href="https://www.threads.com/@healingmindstudio"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-xl border border-white/10 bg-white/[0.03] px-6 py-4 hover:bg-white/[0.06] hover:scale-[1.02] hover:shadow-lg transition-all duration-300 text-center"
-                  >
-                    Threads · @healingmindstudio
-                  </a>
-                </div>
-              </div>
-            </section>
             {selectedImage && (
   <div
     className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
