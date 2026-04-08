@@ -119,7 +119,7 @@ function App() {
                 JooyongPa
     </a>
 
-              <nav className="ml-auto flex gap-6 text-sm text-white/70">
+              <nav className="ml-auto flex gap-8 text-sm text-white/70">
                 <a href="#about" className="hover:text-white transition-colors">
                   About
                 </a>
@@ -135,7 +135,7 @@ function App() {
             <section id="home" className="min-h-screen flex items-center justify-center px-6 md:px-12 relative overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-transparent to-yellow-500/20 blur-3xl" />
             <div className="relative z-10 max-w-6xl text-center">
-            <h1 className="text-8xl md:text-[10rem] font-bold tracking-[-0.05em] leading-[1.2] bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600 text-transparent bg-clip-text mb-8">
+            <h1 className="text-8xl md:text-[10rem] font-bold tracking-[-0.05em] leading-[1.2] bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-600 text-transparent bg-clip-text mb-10">
                 JooyongPa
             </h1>
 
@@ -144,7 +144,7 @@ function App() {
                   AI Creator · Music · Visual · Digital Experiments
                 </p>
 
-                <p className="text-sm md:text-[1.05rem] text-white/50 mb-8">
+                <p className="text-sm md:text-[1.05rem] text-white/50 mb-10">
                   AI 창작자 주용파의 AI 창작 포트폴리오
                 </p>
 
@@ -191,7 +191,7 @@ function App() {
   </p>
 </div>
     <div className="mt-12">
-  <p className="text-xs uppercase tracking-[0.25em] text-[#e6b84f] mb-4">
+  <p className="text-xs uppercase tracking-[0.25em] text-[#e6b84f] mb-6">
     Tools
   </p>
 
@@ -214,11 +214,11 @@ function App() {
 
             <section id="works" className="px-6 md:px-12 py-10">
               <div className="max-w-5xl mx-auto">
-                <div className="text-xs tracking-[0.3em] uppercase text-blue-300/70 mb-4">
+                <div className="text-xs tracking-[0.3em] uppercase text-blue-300/70 mb-6">
                   Portfolio
                 </div>
 
-                <h2 className="text-4xl md:text-6xl font-semibold mb-6">
+                <h2 className="text-4xl md:text-6xl font-semibold mb-10">
                   Featured Works
                 </h2>
 
@@ -228,7 +228,7 @@ function App() {
                   보여줍니다.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
                   {works.map((work) => (
                    <div
                    key={work.title}
@@ -238,7 +238,7 @@ function App() {
                  >
   <div className="flex flex-col h-full justify-between">
   <div>
-    <h3 className="text-2xl font-semibold mb-4 group-hover:text-white transition">
+    <h3 className="text-2xl font-semibold mb-6 group-hover:text-white transition">
       {work.title}
     </h3>
 
@@ -285,7 +285,7 @@ function App() {
       <p className="text-sm uppercase tracking-[0.2em] text-[#e6b84f] mb-3">
         Music
       </p>
-      <h2 className="text-3xl md:text-5xl font-semibold text-white mb-4">
+      <h2 className="text-3xl md:text-5xl font-semibold text-white mb-6">
         Music Ecosystem
       </h2>
       <p className="text-white/60 max-w-2xl leading-relaxed">
@@ -296,18 +296,18 @@ function App() {
 
     {/* ===== Artists / Releases ===== */}
     <div className="mt-12">
-      <h3 className="text-lg text-[#e6b84f] mb-6">Artists / Releases</h3>
+      <h3 className="text-lg text-[#e6b84f] mb-10">Artists / Releases</h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* JooyongPa */}
         <div className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
           <h3 className="text-xl font-semibold text-white mb-3">JooyongPa</h3>
 
-          <p className="text-white/60 text-sm mb-4">
+          <p className="text-white/60 text-sm mb-6">
             Released artist project with AI-based music production and distribution
           </p>
 
-          <div className="flex gap-3 mb-4">
+          <div className="flex gap-3 mb-6">
             <a
               href="https://www.youtube.com/@jooyongpa"
               target="_blank"
@@ -334,15 +334,15 @@ function App() {
           </ul>
         </div>
 
-        {/* Soriionn */}
+        {/* Sorionn */}
         <div className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition">
-          <h3 className="text-xl font-semibold text-white mb-3">Soriionn</h3>
+          <h3 className="text-xl font-semibold text-white mb-3">sorionn</h3>
 
-          <p className="text-white/60 text-sm mb-4">
+          <p className="text-white/60 text-sm mb-6">
             Emotional K-pop based artist project
           </p>
 
-          <div className="flex gap-3 mb-4">
+          <div className="flex gap-3 mb-6">
             <a
               href="https://www.youtube.com/@sorionn"
               target="_blank"
@@ -373,9 +373,9 @@ function App() {
 
     {/* ===== YouTube Channels ===== */}
     <div className="mt-16">
-      <h3 className="text-lg text-[#e6b84f] mb-6">YouTube Channels</h3>
+      <h3 className="text-lg text-[#e6b84f] mb-10">YouTube Channels</h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <a
           href="https://www.youtube.com/@JooyongPa_S"
           target="_blank"
@@ -406,7 +406,7 @@ function App() {
           rel="noopener noreferrer"
           className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition block"
         >
-          <h3 className="text-white font-semibold">Soriionn Channel</h3>
+          <h3 className="text-white font-semibold">Sorionn Channel</h3>
           <p className="text-white/60 text-sm mt-2">
             Experimental and emotional sound project channel
           </p>
@@ -439,14 +439,14 @@ function App() {
 
 <section id="visuals" className="px-6 md:px-12 py-20">
   <div className="max-w-5xl mx-auto">
-    <h2 className="text-4xl md:text-5xl font-semibold mb-6">
+    <h2 className="text-4xl md:text-5xl font-semibold mb-10">
       Visuals
     </h2>
     <div className="mt-12 space-y-12">
     <div>
-  <h3 className="text-lg text-[#e6b84f] mb-4">Cinematic</h3>
+    <h3 className="mb-8 text-xl font-semibold text-yellow-400">Cinematic</h3>
 
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
     <div className="relative group overflow-hidden rounded-xl">
       <img
         src="/images/cinematic1.jpg"
@@ -473,11 +473,11 @@ function App() {
       />
       <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300"></div>
     </div>
-  </div>
+    </div>
   <div>
-  <h3 className="text-lg text-[#e6b84f] mb-4">Character</h3>
+  <h3 className="mb-8 text-xl font-semibold text-yellow-400">Character</h3>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[860px]">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[860px] mb-12">
     <div className="relative group overflow-hidden rounded-xl">
       <img
         src="/images/character1.jpg"
@@ -496,11 +496,12 @@ function App() {
       <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition duration-300"></div>
     </div>
   </div>
-</div>
-<div>
-  <h3 className="text-lg text-[#e6b84f] mb-4">Album Art</h3>
+ </div>
 
-  <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div>
+<h3 className="mb-8 text-xl font-semibold text-yellow-400">Album Art</h3>
+
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
     <div className="overflow-hidden rounded-xl">
       <img
         src="/images/album1.jpg"
@@ -508,7 +509,6 @@ function App() {
         className="w-full aspect-square object-cover transition duration-300 hover:scale-105"
       />
     </div>
-
     <div className="overflow-hidden rounded-xl">
       <img
         src="/images/album2.jpg"
@@ -516,7 +516,6 @@ function App() {
         className="w-full aspect-square object-cover transition duration-300 hover:scale-105"
       />
     </div>
-
     <div className="overflow-hidden rounded-xl">
       <img
         src="/images/album3.jpg"
@@ -524,7 +523,6 @@ function App() {
         className="w-full aspect-square object-cover transition duration-300 hover:scale-105"
       />
     </div>
-
     <div className="overflow-hidden rounded-xl">
       <img
         src="/images/album4.jpg"
@@ -535,22 +533,17 @@ function App() {
   </div>
 </div>
 </div>
-
 </div>
-    
-
     </div>
- 
-</section>
+ </section>
 <section id="contact" className="px-6 md:px-12 py-20">
   <div className="max-w-5xl mx-auto">
-
     <div className="mb-12">
       <p className="text-sm uppercase tracking-[0.2em] text-[#e6b84f] mb-3">
         Contact
       </p>
 
-      <h2 className="text-3xl md:text-5xl font-semibold text-white mb-4">
+      <h2 className="text-3xl md:text-5xl font-semibold text-white mb-6">
         Get in Touch
       </h2>
 
@@ -559,7 +552,7 @@ function App() {
       </p>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
       {/* Email */}
       <a
@@ -623,3 +616,4 @@ function App() {
 }
 
 export default App
+
