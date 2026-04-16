@@ -20,29 +20,31 @@ function App() {
     },
   
   {
-    title: "Music · Spotify Projects",
-    desc: "AI 기반으로 제작한 음악을 DistroKid를 통해 발매하고 있으며, Spotify에서 감상하실 수 있습니다. 발라드, 블루스, K-pop 기반으로 작업을 진행하고 있습니다.",
-    features: [
-      "AI 음악 제작 (Suno)",
-      "Spotify 정식 발매",
-      "Healing Mind Studio / Bluesy Records"
-    ],
-    tech: "Suno · Spotify",
-    accent: "text-blue-400",
-    link: "https://open.spotify.com/artist/3aClvwp9IWq4MKZlbI0p82" 
-  },
-  {
-    title: "Video · AI Visual Projects",
-    desc: "AI 기반 영상 생성 및 Shorts 콘텐츠 제작 프로젝트입니다. Threads를 통해 영상 콘텐츠를 운영하고 있습니다.",
-    features: [
-      "AI 영상 생성 (Sora / Kling)",
-      "Shorts 콘텐츠 제작",
-      "Threads 기반 영상 운영"
-    ],
-    tech: "Sora · Kling · CapCut",
-    accent: "text-purple-400",
-    link: "https://www.threads.com/@healingmindstudio"
-  }
+      title: "Todo App",
+      desc: "할 일을 간편하게 추가, 완료, 삭제할 수 있는 심플한 투두 앱입니다. 직관적인 UI와 빠른 반응성을 중심으로 제작했습니다.",
+      features: [
+        "할 일 추가 / 삭제",
+        "완료 체크 기능",
+        "심플한 UI"
+      ],
+      tech: "React · Vite",
+      accent: "text-yellow-400",
+      link: "https://todo-app-rho-ivory-61.vercel.app/"
+    },
+    {
+      title: "Next Project",
+      desc: "다음 바이브 코딩 프로젝트를 준비 중입니다.",
+      features: [
+        "아이디어 구상 중",
+        "개발 준비 중",
+        "곧 공개 예정"
+      ],
+      tech: null,
+      accent: "text-white/40",
+      link: "#",
+      comingSoon: true
+    },
+
   ]
   const musicTracks = [
     {
@@ -61,7 +63,7 @@ function App() {
       link: "https://www.youtube.com/"
     }
   ]
-  const menuItems = ["About", "Featured Works", "Music", "Visuals", "Contact"]
+  const menuItems = ["About", "Vibe Coding Works", "Music Works", "Visual Works", "Contact"]
 
   return (
     <div className="min-h-screen bg-[#050b18] text-white">
@@ -84,11 +86,11 @@ function App() {
                   const href =
                   item === "About"
                     ? "#about"
-                    : item === "Featured Works"
+                    : item === "Vibe Coding Works"
                     ? "#works"
-                    : item === "Music"
+                    : item === "Music Works"
                     ? "#music"
-                    : item === "Visuals"
+                    : item === "Visual Works"
                     ? "#visuals"
                     : item === "Contact"
                     ? "#contact"
@@ -219,28 +221,34 @@ function App() {
                 </div>
 
                 <h2 className="text-4xl md:text-6xl font-semibold mb-10">
-                  Featured Works
+                  Vibe Coding Works
                 </h2>
 
                 <p className="max-w-2xl text-white/55 leading-7 mb-12">
-                  음악, 비주얼, 영상, 실험 프로젝트를 중심으로 정리한 포트폴리오
-                  섹션입니다. AI 도구를 활용한 창작 흐름과 브랜드 구축 방향을 함께
-                  보여줍니다.
+                  AI와 함께 코딩하며 만든 실제 작동하는 프로젝트들. 아이디어에서 배포까지, 바이브 코딩으로 직접 만들어갑니다. 계속 새로운 프로젝트가 추가됩니다.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
                   {works.map((work) => (
                    <div
                    key={work.title}
-                   className="group rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-10 min-h-[240px]
-                    h-full flex flex-col justify-between  transition-all duration-300 hover:translate-y-[-2px]
-                    hover:bg-white/[0.06] hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,255,255,0.08)]"
+                   className={`group rounded-2xl bg-white/[0.03] p-8 md:p-10 min-h-[240px]
+                    h-full flex flex-col justify-between transition-all duration-300 hover:translate-y-[-2px]
+                    hover:bg-white/[0.06] hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,255,255,0.08)]
+                    ${work.comingSoon ? "border border-dashed border-white/20" : "border border-white/10"}`}
                  >
   <div className="flex flex-col h-full justify-between">
   <div>
-    <h3 className="text-2xl font-semibold mb-6 group-hover:text-white transition">
-      {work.title}
-    </h3>
+    <div className="flex items-center gap-3 mb-6">
+      <h3 className="text-2xl font-semibold group-hover:text-white transition">
+        {work.title}
+      </h3>
+      {work.comingSoon && (
+        <span className="text-[10px] px-2 py-0.5 rounded-full border border-white/20 text-white/40 tracking-widest uppercase">
+          Coming Soon
+        </span>
+      )}
+    </div>
 
     <p className="text-white/60 leading-7">
       {work.desc}
@@ -249,17 +257,13 @@ function App() {
   <ul className="mt-4 space-y-3 text-sm text-white/70">
     {work.features.map((feature) => (
       <li key={feature} className="flex items-center gap-2">
-        <span className="text-green-400">✔</span>
+        <span className={work.comingSoon ? "text-white/30" : "text-green-400"}>
+          {work.comingSoon ? "·" : "✔"}
+        </span>
         <span>{feature}</span>
       </li>
     ))}
   </ul>
-)}
-
-{work.tech && (
-  <p className="mt-5 text-xs uppercase tracking-[0.18em] text-white/70 font-medium">
-    {work.tech}
-  </p>
 )}
   </div>
 
@@ -267,9 +271,9 @@ function App() {
     href={work.link}
     target={work.link.startsWith("http") ? "_blank" : "_self"}
     rel="noreferrer"
-    className={`mt-6 text-sm font-medium ${work.accent} group-hover:translate-x-1 group-hover:brightness-125 transition`}
+    className={`mt-6 text-sm font-medium ${work.accent} ${work.comingSoon ? "cursor-default pointer-events-none" : "group-hover:translate-x-1 group-hover:brightness-125"} transition`}
   >
-    View Live →
+    {work.comingSoon ? "Coming Soon →" : "View Live →"}
   </a>
 </div>
                     </div>
@@ -280,13 +284,13 @@ function App() {
               </div>
             </section>
             <section id="music" className="px-6 md:px-12 py-20">
-  <div className="max-w-6xl mx-auto">
+  <div className="max-w-5xl mx-auto">
     <div className="mb-12">
       <p className="text-sm uppercase tracking-[0.2em] text-[#e6b84f] mb-3">
         Music
       </p>
       <h2 className="text-3xl md:text-5xl font-semibold text-white mb-6">
-        Music Ecosystem
+        Music Works
       </h2>
       <p className="text-white/60 max-w-2xl leading-relaxed">
         아티스트 기반 음악 작업과 YouTube 채널 운영 구조를 함께 구성한 포트폴리오입니다.
@@ -440,9 +444,35 @@ function App() {
 <section id="visuals" className="px-6 md:px-12 py-20">
   <div className="max-w-5xl mx-auto">
     <h2 className="text-4xl md:text-5xl font-semibold mb-10">
-      Visuals
+      Visual Works
     </h2>
     <div className="mt-12 space-y-12">
+    <div>
+    <h3 className="mb-8 text-xl font-semibold text-yellow-400">Video</h3>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <div className="relative group overflow-hidden rounded-xl bg-black">
+        <video
+          src="/videos/video01.mp4"
+          className="w-full h-[240px] object-cover"
+          controls
+          playsInline
+          preload="metadata"
+        />
+      </div>
+
+      <div className="relative group overflow-hidden rounded-xl bg-black">
+        <video
+          src="/videos/video02.mp4"
+          className="w-full h-[240px] object-cover"
+          controls
+          playsInline
+          preload="metadata"
+        />
+      </div>
+    </div>
+    </div>
+
     <div>
     <h3 className="mb-8 text-xl font-semibold text-yellow-400">Cinematic</h3>
 
