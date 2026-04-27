@@ -283,6 +283,98 @@ function App() {
                 <div className="mt-20 h-px w-full bg-gradient-to-r from-transparent via-blue-400/10 to-transparent" />
               </div>
             </section>
+
+            <section className="px-6 md:px-12 py-10">
+              <div className="max-w-5xl mx-auto">
+                <div className="text-xs tracking-[0.3em] uppercase text-purple-400/70 mb-6">
+                  Games
+                </div>
+
+                <h2 className="text-4xl md:text-6xl font-semibold mb-10">
+                  Vibe Coding Games
+                </h2>
+
+                <p className="max-w-2xl text-white/55 leading-7 mb-12">
+                  AI와 함께 만든 브라우저 게임들. 직접 플레이할 수 있습니다.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+                  {[
+                    {
+                      title: "Car Dodge Game",
+                      desc: "도로 위를 달리며 장애물을 피하는 아케이드 스타일 자동차 게임입니다.",
+                      features: ["키보드 조작", "속도 증가 난이도", "점수 시스템"],
+                      link: "https://car-dodge-game-omega.vercel.app/",
+                    },
+                    {
+                      title: "어둠 미로",
+                      desc: "어둠 속에서 출구를 찾아가는 미로 탈출 게임입니다.",
+                      features: ["시야 제한 탐색", "랜덤 미로 생성", "긴장감 있는 분위기"],
+                      link: "https://eodum-miro.vercel.app/",
+                    },
+                    {
+                      title: "To Be Continued",
+                      desc: "다음 바이브 코딩 게임을 준비 중입니다.",
+                      features: ["아이디어 구상 중", "개발 준비 중", "곧 공개 예정"],
+                      link: "#",
+                      comingSoon: true,
+                    },
+                  ].map((game) => (
+                    <div
+                      key={game.title}
+                      className={`group rounded-2xl bg-white/[0.03] p-8 md:p-10 min-h-[240px]
+                        h-full flex flex-col justify-between transition-all duration-300 hover:translate-y-[-2px]
+                        hover:bg-white/[0.06] hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(167,139,250,0.12)]
+                        ${game.comingSoon ? "border border-dashed border-white/20" : "border border-purple-400/20"}`}
+                    >
+                      <div className="flex flex-col h-full justify-between">
+                        <div>
+                          <div className="flex items-center gap-3 mb-6">
+                            <h3 className="text-2xl font-semibold group-hover:text-white transition">
+                              {game.title}
+                            </h3>
+                            {game.comingSoon ? (
+                              <span className="text-[10px] px-2 py-0.5 rounded-full border border-white/20 text-white/40 tracking-widest uppercase">
+                                Coming Soon
+                              </span>
+                            ) : (
+                              <span className="text-[10px] px-2 py-0.5 rounded-full border border-purple-400/40 text-purple-300 tracking-widest uppercase">
+                                GAME
+                              </span>
+                            )}
+                          </div>
+
+                          <p className="text-white/60 leading-7">{game.desc}</p>
+
+                          <ul className="mt-4 space-y-3 text-sm text-white/70">
+                            {game.features.map((feature) => (
+                              <li key={feature} className="flex items-center gap-2">
+                                <span className={game.comingSoon ? "text-white/30" : "text-[#a78bfa]"}>
+                                  {game.comingSoon ? "·" : "▶"}
+                                </span>
+                                <span>{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <a
+                          href={game.link}
+                          target={game.link.startsWith("http") ? "_blank" : "_self"}
+                          rel="noreferrer"
+                          className={`mt-6 text-sm font-medium text-[#a78bfa] ${game.comingSoon ? "cursor-default pointer-events-none opacity-40" : "group-hover:translate-x-1 group-hover:brightness-125"} transition`}
+                        >
+                          {game.comingSoon ? "Coming Soon →" : "Play Now →"}
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-20 h-px w-full bg-gradient-to-r from-transparent via-purple-400/10 to-transparent" />
+              </div>
+            </section>
+
             <section id="music" className="px-6 md:px-12 py-20">
   <div className="max-w-5xl mx-auto">
     <div className="mb-12">
