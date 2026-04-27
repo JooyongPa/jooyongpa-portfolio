@@ -286,17 +286,11 @@ function App() {
 
             <section className="px-6 md:px-12 py-10">
               <div className="max-w-5xl mx-auto">
-                <div className="text-xs tracking-[0.3em] uppercase text-purple-400/70 mb-6">
-                  Games
+                <div className="flex items-center gap-4 mb-12">
+                  <div className="flex-1 h-px bg-gradient-to-r from-transparent via-purple-400/30 to-transparent" />
+                  <span className="text-xs tracking-[0.3em] uppercase text-purple-400/70 whitespace-nowrap">🎮 GAMES</span>
+                  <div className="flex-1 h-px bg-gradient-to-r from-transparent via-purple-400/30 to-transparent" />
                 </div>
-
-                <h2 className="text-4xl md:text-6xl font-semibold mb-10">
-                  Vibe Coding Games
-                </h2>
-
-                <p className="max-w-2xl text-white/55 leading-7 mb-12">
-                  AI와 함께 만든 브라우저 게임들. 직접 플레이할 수 있습니다.
-                </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
                   {[
