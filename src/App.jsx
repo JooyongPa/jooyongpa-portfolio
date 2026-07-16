@@ -1,9 +1,19 @@
 import { useState } from "react"
+import trailCards from "./data/trailCards"
+import futureItems from "./data/futureItems"
+import cardNews from "./data/cardNews"
+import characterImages from "./data/characterImages"
+import characterVideos from "./data/characterVideos"
+import introVideos from "./data/introVideos"
+import imageWorks from "./data/imageWorks"
+import ExpandableCard from "./components/ExpandableCard"
+import MediaOverlay from "./components/MediaOverlay"
 
 function App() {
   
   
-  const [selectedImage, setSelectedImage] = useState(null)
+  const [selectedMedia, setSelectedMedia] = useState(null)
+  const [openTrail, setOpenTrail] = useState(null)
   
   const works = [
     {
@@ -32,10 +42,35 @@ function App() {
       link: "https://todo-app-rho-ivory-61.vercel.app/"
     },
     {
-      title: "Next Project",
-      desc: "다음 바이브 코딩 프로젝트를 준비 중입니다.",
+      title: "AI 브랜드 발표 사이트",
+      desc: "곰파파와 함께하는 인터랙티브 브랜드 스토리텔링 사이트입니다. 탐험 기록부터 앞으로의 계획까지, 발표 형식으로 직접 만들었습니다.",
       features: [
-        "아이디어 구상 중",
+        "인터랙티브 스토리텔링",
+        "캐릭터 브랜딩 (곰파파)",
+        "발표용 내레이션 & 배경음악"
+      ],
+      tech: "React · Vite · Vercel",
+      accent: "text-[#ff8c42]",
+      link: "https://jooyongpa-brand-presentation.vercel.app/"
+    },
+    {
+      title: "일어 회화 공부 앱",
+      desc: "일본어 회화 학습을 위한 앱을 준비 중입니다.",
+      features: [
+        "상황별 회화 연습",
+        "개발 준비 중",
+        "곧 공개 예정"
+      ],
+      tech: null,
+      accent: "text-white/40",
+      link: "#",
+      comingSoon: true
+    },
+    {
+      title: "지하철 타이핑 공부 앱",
+      desc: "지하철에서 짧게 즐기는 타이핑 연습 앱을 준비 중입니다.",
+      features: [
+        "짧은 세션 학습",
         "개발 준비 중",
         "곧 공개 예정"
       ],
@@ -46,24 +81,7 @@ function App() {
     },
 
   ]
-  const musicTracks = [
-    {
-      title: "Drive Focus Playlist",
-      desc: "집중과 이동을 위한 미니멀 그루브 플레이리스트",
-      link: "https://www.youtube.com/"
-    },
-    {
-      title: "Deep Focus Flow",
-      desc: "작업 몰입을 위한 잔잔한 앰비언트 사운드",
-      link: "https://www.youtube.com/"
-    },
-    {
-      title: "Late Night Groove",
-      desc: "밤 시간대에 어울리는 로우 텐션 그루브 음악",
-      link: "https://www.youtube.com/"
-    }
-  ]
-  const menuItems = ["About", "Vibe Coding Works", "Music Works", "Visual Works", "Contact"]
+  const menuItems = ["About", "Trail", "Card News", "Vibe Coding Works", "Music Works", "Visual Works", "Roadmap", "Contact"]
 
   return (
     <div className="min-h-screen bg-[#050b18] text-white">
@@ -86,12 +104,18 @@ function App() {
                   const href =
                   item === "About"
                     ? "#about"
+                    : item === "Trail"
+                    ? "#trail"
+                    : item === "Card News"
+                    ? "#cardnews"
                     : item === "Vibe Coding Works"
                     ? "#works"
                     : item === "Music Works"
                     ? "#music"
                     : item === "Visual Works"
                     ? "#visuals"
+                    : item === "Roadmap"
+                    ? "#future"
                     : item === "Contact"
                     ? "#contact"
                     : "#"
@@ -109,7 +133,7 @@ function App() {
               </nav>
             </div>
 
-            <div className="text-xs text-white/30">© 2025</div>
+            <div className="text-xs text-white/30">© {new Date().getFullYear()} JooyongPa</div>
           </aside>
 
           <main className="flex-1 md:ml-64">
@@ -143,11 +167,11 @@ function App() {
 
 
                   <p className="text-lg md:text-[1.9rem] text-white/90 mb-3">
-                  AI Creator · Music · Visual · Digital Experiments
+                  AI Explorer · Creator · Brand Builder
                 </p>
 
                 <p className="text-sm md:text-[1.05rem] text-white/50 mb-10">
-                  AI 창작자 주용파의 AI 창작 포트폴리오
+                  AI 탐험가 주용파의 탐험 기록
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-5 justify-center pt-2">
@@ -175,21 +199,21 @@ function App() {
 
     <div className="space-y-8 text-white/75 leading-8 max-w-3xl mx-auto">
   <p>
-  AI 기반 창작을 중심으로 음악, 영상, 실험적 프로젝트를 진행하고 있습니다.
+    AI Explorer, 주용파입니다.
     <br />
-    Suno, Grok을 중심으로 AI 도구를 활용하여 기획부터 제작, 정리와 운영까지 직접 이어가고 있습니다.
+    AI라는 낯선 길을 조금 먼저 걷고 탐험하고 있는 사람입니다.
   </p>
 
   <p>
-    음악은 DistroKid를 통해 발매하고 있으며
+    음악을 만들고, 코드를 짜고, 캐릭터를 그리고, 콘텐츠를 매일 자동으로 발행하면서
     <br />
-    Spotify에서 감상하실 수 있습니다.
+    AI로 할 수 있는 것들을 하나씩 직접 실험하고 있습니다.
   </p>
 
   <p>
-    단순한 결과물이 아닌
+    거창한 정답을 주는 사람이 아니라, 옆에서 같이 헤매고 같이 찾아가는 사람이 되고 싶습니다.
     <br />
-    지속 가능한 창작 구조와 브랜드를 만들어가는 과정에 집중하고 있습니다.
+    그 경험을 워크숍과 강의로 나누며, 이 포트폴리오에 계속 기록해가고 있습니다.
   </p>
 </div>
     <div className="mt-12">
@@ -213,6 +237,64 @@ function App() {
     <div className="mt-16 h-px w-full bg-gradient-to-r from-transparent via-blue-400/10 to-transparent" />
   </div>
 </section>
+
+            <section id="trail" className="px-6 md:px-12 py-10">
+              <div className="max-w-5xl mx-auto">
+                <div className="text-xs tracking-[0.3em] uppercase text-[#e6b84f]/70 mb-6">
+                  Trail
+                </div>
+
+                <h2 className="text-4xl md:text-6xl font-semibold mb-4">
+                  탐험의 흔적들 🗺️
+                </h2>
+
+                <p className="max-w-2xl text-white/55 leading-7 mb-12">
+                  AI를 도구로 삼아 하나씩 쌓아온 기록들입니다. 카드를 클릭하면 자세한 이야기가 펼쳐져요.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {trailCards.map((card) => (
+                    <ExpandableCard
+                      key={card.title}
+                      {...card}
+                      open={openTrail === card.title}
+                      onToggle={() => setOpenTrail(openTrail === card.title ? null : card.title)}
+                      onImageClick={(src) => setSelectedMedia({ type: "image", src })}
+                    />
+                  ))}
+                </div>
+
+                <div className="mt-20 h-px w-full bg-gradient-to-r from-transparent via-blue-400/10 to-transparent" />
+              </div>
+            </section>
+
+            <section id="cardnews" className="px-6 md:px-12 py-10">
+              <div className="max-w-5xl mx-auto">
+                <div className="text-xs tracking-[0.3em] uppercase text-[#e6b84f]/70 mb-6">
+                  Card News
+                </div>
+
+                <h2 className="text-4xl md:text-6xl font-semibold mb-4">
+                  콘텐츠 자동화
+                </h2>
+
+                <p className="max-w-2xl text-white/55 leading-7 mb-12">
+                  요일마다 정기 발행되는 카드뉴스 시리즈입니다. 토요일 편은 곰파파가 진행을 맡고 있어요.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {cardNews.map((item) => (
+                    <ExpandableCard
+                      key={item.title}
+                      {...item}
+                      onImageClick={(src) => setSelectedMedia({ type: "image", src })}
+                    />
+                  ))}
+                </div>
+
+                <div className="mt-20 h-px w-full bg-gradient-to-r from-transparent via-blue-400/10 to-transparent" />
+              </div>
+            </section>
 
             <section id="works" className="px-6 md:px-12 py-10">
               <div className="max-w-5xl mx-auto">
@@ -418,7 +500,7 @@ function App() {
           </div>
 
           <ul className="text-sm text-white/70 space-y-1">
-            <li>• 그뿐이야 (That’s All)</li>
+            <li>• 그뿐이야 (That's All)</li>
             <li>• Clap It Loud</li>
             <li>• Bar Philosophy</li>
           </ul>
@@ -532,126 +614,168 @@ function App() {
     <h2 className="text-4xl md:text-5xl font-semibold mb-10">
       Visual Works
     </h2>
-    <div className="mt-12 space-y-12">
+    <div className="mt-12 space-y-16">
+
+    {/* ===== 자기소개 ===== */}
     <div>
-    <h3 className="mb-8 text-xl font-semibold text-yellow-400">Video</h3>
-
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-      <div className="relative group overflow-hidden rounded-xl bg-black">
-        <video
-          src="/videos/video01.mp4"
-          className="w-full h-[240px] object-cover"
-          controls
-          playsInline
-          preload="metadata"
-        />
-      </div>
-
-      <div className="relative group overflow-hidden rounded-xl bg-black">
-        <video
-          src="/videos/video02.mp4"
-          className="w-full h-[240px] object-cover"
-          controls
-          playsInline
-          preload="metadata"
-        />
+      <h3 className="mb-6 text-xl font-semibold text-yellow-400">자기소개</h3>
+      <div className="flex flex-wrap gap-4">
+        {introVideos.map((v) => (
+          <button
+            key={v.src}
+            onClick={() => setSelectedMedia({ type: "video", src: v.src, title: v.title })}
+            className="px-6 py-3 rounded-full bg-white/[0.04] border border-white/10 text-sm text-white/80 hover:bg-white/[0.08] hover:border-white/20 transition"
+          >
+            ▶ {v.title}
+          </button>
+        ))}
       </div>
     </div>
-    </div>
 
+    {/* ===== Character ===== */}
     <div>
-    <h3 className="mb-8 text-xl font-semibold text-yellow-400">Cinematic</h3>
+      <h3 className="mb-3 text-xl font-semibold text-yellow-400">Character — 주용파 &amp; 곰파파</h3>
+      <p className="text-white/50 text-sm leading-6 mb-8 max-w-2xl">
+        AI로 직접 만든 캐릭터 IP입니다. 주용파의 여러 스타일과, 같은 캐릭터의 곰 버전인 곰파파까지 함께 소개합니다.
+      </p>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-    <div className="relative group overflow-hidden rounded-xl">
-      <img
-        src="/images/cinematic1.jpg"
-        alt="Cinematic visual 1"
-        className="w-full h-[220px] object-cover transition duration-300 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300"></div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        {characterImages.map((img) => (
+          <div
+            key={img.src}
+            className="cursor-pointer group"
+            onClick={() => setSelectedMedia({ type: "image", src: img.src, title: img.label })}
+          >
+            <div className="relative overflow-hidden rounded-xl">
+              <img
+                src={img.src}
+                alt={img.label}
+                className="w-full h-[160px] object-cover transition duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition duration-300" />
+            </div>
+            <p className="text-[11px] text-white/40 text-center mt-2">{img.label}</p>
+          </div>
+        ))}
+
+        <div className="rounded-xl border border-dashed border-white/20 h-[160px] flex flex-col items-center justify-center text-center px-3">
+          <span className="text-2xl mb-1">✨</span>
+          <p className="text-[11px] text-white/40 leading-tight">
+            더 새로운 AI 탐험의 동반자<br />To Be Continued
+          </p>
+        </div>
+      </div>
+
+      <div className="flex flex-wrap gap-3">
+        {characterVideos.map((v) => (
+          <button
+            key={v.src}
+            onClick={() => setSelectedMedia({ type: "video", src: v.src, title: v.title })}
+            className="px-5 py-2.5 rounded-full bg-white/[0.04] border border-white/10 text-sm text-white/70 hover:bg-white/[0.08] hover:border-white/20 transition"
+          >
+            ▶ {v.title}
+          </button>
+        ))}
+      </div>
     </div>
 
-    <div className="relative group overflow-hidden rounded-xl">
-      <img
-        src="/images/cinematic2.jpg"
-        alt="Cinematic visual 2"
-        className="w-full h-[220px] object-cover transition duration-300 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300"></div>
+    {/* ===== Image (구 Cinematic 통합) ===== */}
+    <div>
+      <h3 className="mb-8 text-xl font-semibold text-yellow-400">Image</h3>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {imageWorks.map((img) => (
+          <div
+            key={img.src}
+            className="relative group overflow-hidden rounded-xl cursor-pointer"
+            onClick={() => setSelectedMedia({ type: "image", src: img.src, title: img.label })}
+          >
+            <img
+              src={img.src}
+              alt={img.label}
+              className="w-full h-[220px] object-cover transition duration-300 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300" />
+          </div>
+        ))}
+      </div>
     </div>
 
-    <div className="relative group overflow-hidden rounded-xl">
-      <img
-        src="/images/cinematic3.jpg"
-        alt="Cinematic visual 3"
-        className="w-full h-[220px] object-cover transition duration-300 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300"></div>
-    </div>
-    </div>
-  <div>
-  <h3 className="mb-8 text-xl font-semibold text-yellow-400">Character</h3>
+    {/* ===== Album Art ===== */}
+    <div>
+      <h3 className="mb-8 text-xl font-semibold text-yellow-400">Album Art</h3>
 
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[860px] mb-12">
-    <div className="relative group overflow-hidden rounded-xl">
-      <img
-        src="/images/character1.jpg"
-        alt="Character visual 1"
-        className="w-full h-[240px] object-cover transition duration-300 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition duration-300"></div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="overflow-hidden rounded-xl">
+          <img
+            src="/images/album1.jpg"
+            alt="Album art 1"
+            className="w-full aspect-square object-cover transition duration-300 hover:scale-105"
+          />
+        </div>
+        <div className="overflow-hidden rounded-xl">
+          <img
+            src="/images/album2.jpg"
+            alt="Album art 2"
+            className="w-full aspect-square object-cover transition duration-300 hover:scale-105"
+          />
+        </div>
+        <div className="overflow-hidden rounded-xl">
+          <img
+            src="/images/album3.jpg"
+            alt="Album art 3"
+            className="w-full aspect-square object-cover transition duration-300 hover:scale-105"
+          />
+        </div>
+        <div className="overflow-hidden rounded-xl">
+          <img
+            src="/images/album4.jpg"
+            alt="Album art 4"
+            className="w-full aspect-square object-cover transition duration-300 hover:scale-105"
+          />
+        </div>
+      </div>
     </div>
 
-    <div className="relative group overflow-hidden rounded-xl">
-      <img
-        src="/images/character2.jpg"
-        alt="Character visual 2"
-        className="w-full h-[240px] object-cover transition duration-300 group-hover:scale-105"
-      />
-      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition duration-300"></div>
     </div>
   </div>
- </div>
-
-<div>
-<h3 className="mb-8 text-xl font-semibold text-yellow-400">Album Art</h3>
-
-  <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-    <div className="overflow-hidden rounded-xl">
-      <img
-        src="/images/album1.jpg"
-        alt="Album art 1"
-        className="w-full aspect-square object-cover transition duration-300 hover:scale-105"
-      />
-    </div>
-    <div className="overflow-hidden rounded-xl">
-      <img
-        src="/images/album2.jpg"
-        alt="Album art 2"
-        className="w-full aspect-square object-cover transition duration-300 hover:scale-105"
-      />
-    </div>
-    <div className="overflow-hidden rounded-xl">
-      <img
-        src="/images/album3.jpg"
-        alt="Album art 3"
-        className="w-full aspect-square object-cover transition duration-300 hover:scale-105"
-      />
-    </div>
-    <div className="overflow-hidden rounded-xl">
-      <img
-        src="/images/album4.jpg"
-        alt="Album art 4"
-        className="w-full aspect-square object-cover transition duration-300 hover:scale-105"
-      />
-    </div>
-  </div>
-</div>
-</div>
-</div>
-    </div>
  </section>
+
+<section id="future" className="px-6 md:px-12 py-20">
+  <div className="max-w-5xl mx-auto">
+    <div className="text-xs tracking-[0.3em] uppercase text-[#e6b84f]/70 mb-6">
+      What's Next
+    </div>
+
+    <h2 className="text-4xl md:text-5xl font-semibold mb-4">
+      앞으로의 계획
+    </h2>
+
+    <p className="max-w-2xl text-white/55 leading-7 mb-4">
+      워크숍 → 당근모임 → 강의 → 브랜드, 이 순서로 성장해나갈 계획입니다. 카드를 클릭하면 자세한 이야기가 펼쳐져요.
+    </p>
+
+    <div className="mb-12 inline-block rounded-2xl border border-[#e6b84f]/30 bg-[#e6b84f]/[0.06] px-8 py-6 max-w-xl">
+      <p className="text-xl md:text-2xl font-semibold text-[#e6b84f] leading-relaxed">
+        "국가대표 아니어도 됨 —<br />같이 길 찾아주는 사람"이 되고 싶어요.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {futureItems.map((item, i) => (
+        <div key={item.title} className="relative">
+          <span className="absolute -top-3 -left-3 z-10 w-7 h-7 rounded-full bg-[#e6b84f] text-[#050b18] text-xs font-bold flex items-center justify-center">
+            {i + 1}
+          </span>
+          <ExpandableCard {...item} />
+        </div>
+      ))}
+    </div>
+
+    <div className="mt-20 h-px w-full bg-gradient-to-r from-transparent via-blue-400/10 to-transparent" />
+  </div>
+</section>
+
 <section id="contact" className="px-6 md:px-12 py-20">
   <div className="max-w-5xl mx-auto">
     <div className="mb-12">
@@ -668,7 +792,7 @@ function App() {
       </p>
     </div>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
       {/* Email */}
       <a
@@ -683,46 +807,33 @@ function App() {
   </p>
 </a>
 
-      {/* Blog */}
+      {/* Littly - 모든 채널 모음 */}
       <a
-        href="https://blog.naver.com/act2lab"
+        href="https://litt.ly/h.m.studio"
         target="_blank"
         rel="noopener noreferrer"
         className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition block"
       >
-        <h3 className="text-white font-semibold">Naver Blog</h3>
+        <h3 className="text-white font-semibold">🔗 litt.ly/h.m.studio</h3>
         <p className="text-white/60 text-sm mt-2">
-          AI 콘텐츠와 실험 기록
-        </p>
-      </a>
-
-      {/* Threads */}
-      <a
-        href="https://www.threads.com/@jooyongpa"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:bg-white/10 transition block"
-      >
-        <h3 className="text-white font-semibold">Threads</h3>
-        <p className="text-white/60 text-sm mt-2">
-          최신 작업 및 업데이트
+          블로그 · 스레드 · SNS 채널 모음
         </p>
       </a>
 
     </div>
+
+    <div className="mt-14 flex flex-col items-center gap-3">
+      <img
+        src="/images/business-card.png"
+        alt="디지털 명함"
+        className="w-full max-w-[280px] rounded-xl shadow-lg cursor-pointer hover:opacity-90 transition"
+        onClick={() => setSelectedMedia({ type: "image", src: "/images/business-card.png" })}
+      />
+      <p className="text-white/30 text-xs">디지털 명함 — 클릭하면 크게 보기</p>
+    </div>
   </div>
 </section>
-            {selectedImage && (
-  <div
-    className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
-    onClick={() => setSelectedImage(null)}
-  >
-    <img
-      src={selectedImage}
-      className="max-w-[90%] max-h-[90%] rounded-lg"
-    />
-  </div>
-)}
+            <MediaOverlay media={selectedMedia} onClose={() => setSelectedMedia(null)} />
 
           </main>
         </div>
@@ -732,4 +843,3 @@ function App() {
 }
 
 export default App
-
