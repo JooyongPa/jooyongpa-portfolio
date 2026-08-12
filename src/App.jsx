@@ -94,10 +94,20 @@ function App() {
             <div>
             <a 
               href="#home"
-              className="block text-[#e6b84f] font-semibold text-xl tracking-wide mb-12 cursor-pointer hover:opacity-80 transition"
+              className="block text-[#e6b84f] font-semibold text-xl tracking-wide mb-6 cursor-pointer hover:opacity-80 transition"
               >
                    JooyongPa
             </a>
+
+              <a
+                href="https://jooyoungpa-app-library.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="group mb-9 flex h-11 w-[120px] items-center justify-between rounded-lg border border-white/20 bg-white/[0.025] pl-2.5 pr-3 text-[13px] text-[#e6b84f] transition-all duration-300 hover:-translate-y-px hover:border-[#e6b84f]/55 hover:bg-[#e6b84f]/[0.05]"
+              >
+                <span>App Library</span>
+                <span className="text-xs transition-transform duration-300 group-hover:translate-x-0.5">↗</span>
+              </a>
 
               <nav className="space-y-4 text-sm text-white/60">
                 {menuItems.map((item) => {
@@ -145,14 +155,22 @@ function App() {
                 JooyongPa
     </a>
 
-              <nav className="ml-auto flex gap-8 text-sm text-white/70">
+              <nav className="ml-auto flex items-center gap-3 text-sm text-white/70 md:gap-8">
+                <a
+                  href="https://jooyoungpa-app-library.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-lg border border-white/20 px-3 py-2 text-xs text-[#e6b84f] transition-all hover:border-[#e6b84f]/60 hover:bg-[#e6b84f]/[0.06] md:hidden"
+                >
+                  Library ↗
+                </a>
                 <a href="#about" className="hover:text-white transition-colors">
                   About
                 </a>
-                <a href="#works" className="hover:text-white transition-colors">
+                <a href="#works" className="hidden hover:text-white transition-colors sm:block">
                   Projects
                 </a>
-                <a href="#contact" className="hover:text-white transition-colors">
+                <a href="#contact" className="hidden hover:text-white transition-colors sm:block">
                   Contact
                 </a>
               </nav>
